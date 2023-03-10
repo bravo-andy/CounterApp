@@ -10,15 +10,19 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak private var countLabel: UILabel!
+    private var countStore: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func countAdd(_ sender: Any) {
-        countLabel.text = String((Int(countLabel.text!)! + 1))
+    @IBAction private func countAdd(_ sender: Any) {
+        //countLabel.text = String((Int(countLabel.text!)! + 1))
+        countStore += 1
+        countLabel.text = String(countStore)
+        
     }
     
 }
